@@ -1,0 +1,244 @@
+{
+  "replace": false,
+  "groups": [
+    "fruits",
+    "grains",
+    "proteins",
+    "sugars",
+    "vegetables"
+  ],
+  "effects": [
+    {
+      "attributes": [
+        {
+          "name": "minecraft:generic.max_health",
+          "operation": "multiply_total",
+          "amount": -0.5
+        },
+        {
+          "name": "minecraft:generic.movement_speed",
+          "operation": "multiply_total",
+          "amount": -0.2
+        },
+        {
+          "name": "minecraft:generic.attack_damage",
+          "operation": "add",
+          "amount": -2.0
+        },
+        {
+          "name": "minecraft:generic.attack_speed",
+          "operation": "multiply_total",
+          "amount": -0.2
+        },
+        {
+          "name": "minecraft:generic.armor",
+          "operation": "multiply_total",
+          "amount": -0.2
+        },
+        {
+          "name": "minecraft:generic.armor_toughness",
+          "operation": "multiply_total",
+          "amount": -0.2
+        }
+      ],
+      "status_effects": [
+        {
+          "name": "minecraft:nausea",
+          "power": 1
+        }
+      ],
+      "conditions": [
+        {
+          "groups": [
+            "fruits",
+            "vegetables",
+            "proteins",
+            "grains"
+          ],
+          "match": "all",
+          "below": 0.05
+        }
+      ]
+    },
+    {
+      "attributes": [
+        {
+          "name": "minecraft:generic.movement_speed",
+          "operation": "multiply_total",
+          "amount": -0.25
+        }
+      ],
+      "conditions": [
+        {
+          "groups": [
+            "fruits",
+            "vegetables"
+          ],
+          "match": "any",
+          "below": 0.30
+        }
+      ]
+    },
+    {
+      "attributes": [
+        {
+          "name": "minecraft:generic.attack_damage",
+          "operation": "multiply_total",
+          "amount": -0.1
+        },
+        {
+          "name": "minecraft:generic.attack_damage",
+          "operation": "add",
+          "amount": -1.0
+        },
+        {
+          "name": "minecraft:generic.attack_speed",
+          "operation": "multiply_total",
+          "amount": -0.1
+        }
+      ],
+      "conditions": [
+        {
+          "groups": [
+            "proteins",
+            "grains"
+          ],
+          "match": "every",
+          "below": 0.30
+        }
+      ]
+    },
+    {
+      "status_effects": [
+        {
+          "name": "minecraft:mining_fatigue",
+          "power": 2
+        }
+      ],
+      "conditions": [
+        {
+          "groups": [
+            "grains"
+          ],
+          "match": "all",
+          "below": 0.30
+        }
+      ]
+    },
+    {
+      "attributes": [
+        {
+          "name": "minecraft:generic.max_health",
+          "operation": "multiply_base",
+          "amount": -0.1
+        }
+      ],
+      "conditions": [
+        {
+          "groups": [
+            "fruits",
+            "vegetables",
+            "proteins",
+            "grains"
+          ],
+          "match": "every",
+          "below": 0.30
+        },
+        {
+          "groups": [
+            "sugars"
+          ],
+          "match": "every",
+          "below": 0.10
+        }
+      ]
+    },
+    {
+      "attributes": [
+        {
+          "name": "minecraft:generic.max_health",
+          "operation": "add",
+          "amount": 2.0
+        },
+        {
+          "name": "minecraft:generic.attack_damage",
+          "operation": "multiply_total",
+          "amount": 0.1
+        },
+        {
+          "name": "minecraft:generic.attack_damage",
+          "operation": "add",
+          "amount": 2.0
+        },
+        {
+          "name": "minecraft:generic.attack_speed",
+          "operation": "multiply_total",
+          "amount": 0.1
+        }
+      ],
+      "conditions": [
+        {
+          "groups": [
+            "proteins",
+            "grains"
+          ],
+          "match": "all",
+          "above": 0.8,
+          "below": 1.0
+        }
+      ]
+    },
+    {
+      "attributes": [
+        {
+          "name": "minecraft:generic.max_health",
+          "operation": "add",
+          "amount": 2.5
+        },
+        {
+          "name": "minecraft:generic.armor_toughness",
+          "operation": "add",
+          "amount": 1.0
+        }
+      ],
+      "conditions": [
+        {
+          "groups": [
+            "proteins",
+            "fruits",
+            "vegetables",
+            "grains"
+          ],
+          "match": "every",
+          "above": 0.75,
+          "below": 1.0
+        }
+      ]
+    },
+    {
+      "attributes": [
+        {
+          "name": "minecraft:generic.movement_speed",
+          "operation": "multiply_base",
+          "amount": 0.30
+        }
+      ],
+      "status_effects": [
+        {
+          "name": "minecraft:hunger",
+          "power": 4
+        }
+      ],
+      "conditions": [
+        {
+          "groups": [
+            "sugars"
+          ],
+          "match": "all",
+          "above": 0.8,
+          "below": 1.0
+        }
+      ]
+    }
+  ]
+}
